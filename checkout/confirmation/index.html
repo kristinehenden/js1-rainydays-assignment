@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Thank you for your order" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainy Days | Confirmation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/305b4ecc01.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script src="../../js/confirmation.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="../../index.html" class="logo">
+        <img src="../../images/logo.png" alt="RainyDays logo" />
+      </a>
+      <div class="icons">
+        <a href="../../coming-soon.html" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a href="../../coming-soon.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a href="../../cart.html" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+
+      <form class="search-form">
+        <label for="search" class="visually-hidden">Search</label>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" name="search" placeholder="Search" />
+      </form>
+    </header>
+    <main>
+      <section class="confirmation-page">
+        <div class="confirmation-icon">&#10003;</div>
+
+        <h1 id="confirmation-heading">Thank you for your order!</h1>
+        <p id="confirmation-status" role="status"></p>
+
+        <p class="confirmation-text">
+          This is a simulated purchase. No payment has been taken and no
+          confirmation email will be sent.
+        </p>
+
+        <p id="order-number" class="order-number"></p>
+
+        <a href="../../index.html" class="continue-shopping-button">
+          Continue Shopping
+        </a>
+        <div class="confirmation-grid">
+          <div class="confirmation-summary">
+            <h2>Order Summary</h2>
+            <div id="confirmation-items"></div>
+
+            <div class="confirmation-line">
+              <span>Subtotal</span>
+              <span id="confirmation-subtotal"></span>
+            </div>
+
+            <div class="confirmation-line">
+              <span>Shipping</span>
+              <span id="confirmation-shipping"></span>
+            </div>
+
+            <div class="confirmation-total">
+              <span>Total</span>
+              <span id="confirmation-total"></span>
+            </div>
+          </div>
+
+          <div class="confirmation-next">
+            <h2>What happens next?</h2>
+
+            <div class="next-step">
+              <div class="step-icon">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+
+              <div class="step-text">
+                <h3>Order confirmed</h3>
+                <p>We've received your order</p>
+              </div>
+            </div>
+
+            <div class="next-step">
+              <div class="step-icon">
+                <i class="fa-solid fa-truck"></i>
+              </div>
+
+              <div class="step-text">
+                <h3>Order on the way</h3>
+                <p>We'll notify you when your order is shipped</p>
+              </div>
+            </div>
+
+            <div class="next-step">
+              <div class="step-icon">
+                <i class="fa-solid fa-home"></i>
+              </div>
+
+              <div class="step-text">
+                <h3>Delivery</h3>
+                <p>Estimated delivery: 3-7 days</p>
+              </div>
+
+              <p>This is a demo purchase. No order will be shipped.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="info-bar">
+        <div class="info-item">
+          <i class="fa-solid fa-truck"></i>
+
+          <div>
+            <h3>Free Delivery over 100.00 $</h3>
+            <p>3-7 days delivery</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-shield-halved"></i>
+
+          <div>
+            <h3>5 years warranty</h3>
+            <p>on all jackets</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-arrows-rotate"></i>
+
+          <div>
+            <h3>Free returns</h3>
+            <p>30 days return policy</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="../../images/logo.png" alt="RainyDays logo" />
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Shop</h3>
+
+            <a href="../../category/womens-clothing.html">Women</a>
+            <a href="../../category/mens-clothing.html">Men</a>
+            <a href="../../coming-soon.html">Sale</a>
+            <a href="../../coming-soon.html">New Arrivals</a>
+            <a href="../../coming-soon.html">Gift Cards</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+
+            <a href="../../coming-soon.html">Shipping & Delivery</a>
+            <a href="../../coming-soon.html">Returns</a>
+            <a href="../../coming-soon.html">Exchanges</a>
+            <a href="../../coming-soon.html">FAQ</a>
+            <a href="../../coming-soon.html">Track Your Order</a>
+            <a href="../../coming-soon.html">Contact Us</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>About</h3>
+
+            <a href="../../coming-soon.html">About Us</a>
+            <a href="../../coming-soon.html">Our Materials</a>
+            <a href="../../coming-soon.html">Sustainability</a>
+            <a href="../../coming-soon.html">Careers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+
+        <a href="../../coming-soon.html" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="../../coming-soon.html" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="../../coming-soon.html" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube</span>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

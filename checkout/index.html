@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Checkout your RainyDays order securely" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainy Days | Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/305b4ecc01.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/cart.js" defer></script>
+    <script src="../js/checkout.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.png" alt="RainyDays logo" />
+      </a>
+      <div class="icons">
+        <a href="../coming-soon.html" aria-label="Account">
+          <i class="fa-regular fa-user"></i>
+        </a>
+        <a href="../coming-soon.html" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+        <a href="../cart.html" class="cart-icon" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">1</span>
+        </a>
+      </div>
+
+      <form class="search-form">
+        <label for="search" class="visually-hidden">Search</label>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" name="search" placeholder="Search" />
+      </form>
+    </header>
+    <main>
+      <section class="checkout-page">
+        <nav class="breadcrumb">
+          <a href="../index.html">Homepage</a> ->
+          <a href="../cart.html">Shopping Cart</a> ->
+          <span>Checkout</span>
+        </nav>
+
+        <h1>Checkout</h1>
+        <p class="checkout-subtitle">Complete your order</p>
+
+        <div class="checkout-layout">
+          <form id="checkout-form" class="checkout-form">
+            <div class="checkout-section">
+              <div class="checkout-section-heading">
+                <span>1</span>
+                <h2>Contact information</h2>
+                <i class="fa-regular fa-envelope section-icon"></i>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email address*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone number (optional)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-section">
+              <div class="checkout-section-heading">
+                <span>2</span>
+                <h2>Delivery address</h2>
+                <i class="fa-solid fa-location-dot section-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address*</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Street address"
+                  required
+                />
+              </div>
+
+              <div class="form-row three-columns">
+                <div class="form-group">
+                  <label for="city">City*</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="City"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="postal-code">Postal code*</label>
+                  <input
+                    type="text"
+                    id="postal-code"
+                    name="postal-code"
+                    placeholder="Postal code"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="country">Country*</label>
+                  <select id="country" name="country" required>
+                    <option value="">Select country</option>
+                    <option>Norway</option>
+                    <option>Sweden</option>
+                    <option>Denmark</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkout-section">
+              <div class="checkout-section-heading">
+                <span>3</span>
+                <h2>Shipping method</h2>
+                <i class="fa-regular fa-truck section-icon"></i>
+              </div>
+
+              <label class="shipping-option">
+                <span>
+                  <input
+                    type="radio"
+                    name="shipping"
+                    value="standard"
+                    checked
+                  />
+                  Standard delivery (3-7 days)
+                </span>
+                <strong id="standard-shipping-price">-</strong>
+              </label>
+
+              <label class="shipping-option">
+                <span>
+                  <input type="radio" name="shipping" value="express" />
+
+                  Fast delivery (2-5 days)
+                </span>
+                <strong>9.99 $</strong>
+              </label>
+            </div>
+
+            <div class="checkout-section">
+              <div class="checkout-section-heading">
+                <span>4</span>
+                <h2>Payment information</h2>
+                <i class="fa-regular fa-credit-card section-icon"></i>
+              </div>
+
+              <p>
+                Demo checkout. Use fictional card details only. No payment will
+                be taken.
+              </p>
+
+              <div class="form-group">
+                <label for="card-number">Card information*</label>
+                <input
+                  type="text"
+                  id="card-number"
+                  placeholder="1234 5678 9012 3456"
+                  required
+                />
+              </div>
+
+              <div class="form-row three-columns">
+                <div class="form-group">
+                  <label for="expiry">Expiration date*</label>
+                  <input type="text" id="expiry" placeholder="MM/YY" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="cvc">CVC/CVV*</label>
+                  <input type="text" id="cvc" placeholder="123" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="card-name">Name on card*</label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    placeholder="Name on card"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="payment-safe">
+                <i class="fa-solid fa-lock"></i>
+                <span>No payment is processed</span>
+              </div>
+            </div>
+          </form>
+
+          <aside class="checkout-summary">
+            <h2>Order summary</h2>
+
+            <p id="checkout-status" role="status"></p>
+            <div id="checkout-items"></div>
+
+            <div class="summary-line">
+              <span>Subtotal:</span>
+              <span id="checkout-subtotal">-</span>
+            </div>
+
+            <div class="summary-line">
+              <span>Shipping:</span>
+              <span id="checkout-shipping">-</span>
+            </div>
+
+            <div class="summary-total">
+              <span>Total</span>
+              <span id="checkout-total">-</span>
+            </div>
+
+            <p class="tax-included">Tax included</p>
+
+            <div class="summary-benefits">
+              <div class="benefit-item">
+                <i class="fa-solid fa-lock"></i>
+                <p>
+                  <strong>Secure payment</strong>
+                  All transactions are encrypted
+                </p>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <p>
+                  <strong>Easy returns</strong>
+                  30 day return policy
+                </p>
+              </div>
+              <div class="benefit-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <p>
+                  <strong>5 year warranty</strong>
+                  On all jackets
+                </p>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              form="checkout-form"
+              id="pay-now"
+              class="pay-now-button"
+              disabled
+            >
+              <i class="fa-solid fa-lock"></i>
+              <span>Pay now</span>
+            </button>
+
+            <p class="terms-text">
+              By placing your order, you agree to our
+              <a href="../terms.html">Terms and Conditions</a>
+              and acknowledge our
+              <a href="../privacy.html">Privacy Policy</a>
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="info-bar">
+        <div class="info-item">
+          <i class="fa-solid fa-truck"></i>
+
+          <div>
+            <h3>Free Delivery over 100.00 $</h3>
+            <p>3-7 days delivery</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-shield-halved"></i>
+
+          <div>
+            <h3>5 years warranty</h3>
+            <p>on all jackets</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-arrows-rotate"></i>
+
+          <div>
+            <h3>Free returns</h3>
+            <p>30 days return policy</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="../images/logo.png" alt="RainyDays logo" />
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3>Shop</h3>
+
+            <a href="../category/womens-clothing.html">Women</a>
+            <a href="../category/mens-clothing.html">Men</a>
+            <a href="../coming-soon.html">Sale</a>
+            <a href="../coming-soon.html">New Arrivals</a>
+            <a href="../coming-soon.html">Gift Cards</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>Customer Service</h3>
+
+            <a href="../coming-soon.html">Shipping & Delivery</a>
+            <a href="../coming-soon.html">Returns</a>
+            <a href="../coming-soon.html">Exchanges</a>
+            <a href="../coming-soon.html">FAQ</a>
+            <a href="../coming-soon.html">Track Your Order</a>
+            <a href="../coming-soon.html">Contact Us</a>
+          </div>
+
+          <div class="footer-column">
+            <h3>About</h3>
+
+            <a href="../coming-soon.html">About Us</a>
+            <a href="../coming-soon.html">Our Materials</a>
+            <a href="../coming-soon.html">Sustainability</a>
+            <a href="../coming-soon.html">Careers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+
+        <a href="../coming-soon.html" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="../coming-soon.html" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="../coming-soon.html" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+          <span>YouTube</span>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
