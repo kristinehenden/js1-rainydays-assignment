@@ -34,6 +34,9 @@ async function loadCategory() {
       link.textContent = "View details";
       link.href = `../product/index.html?id=${jacket.id}`;
 
+      link.classList.add("product-card-link");
+      link.setAttribute("aria-label", `View details for ${jacket.title}`);
+      
       card.appendChild(image);
       card.appendChild(heading);
       card.appendChild(price);
@@ -41,7 +44,7 @@ async function loadCategory() {
       categoryProducts.appendChild(card);
     });
 
-    categoryStatus.textContent = `${jackets.length} jackets found. `;
+    categoryStatus.textContent = "";
   } catch (error) {
     categoryStatus.textContent = "Could not load jackets. Please try again.";
   }

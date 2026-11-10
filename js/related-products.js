@@ -33,10 +33,15 @@ async function loadRelatedProducts(excludedIds, productPagePath = "../product/in
         price.textContent = `$${unitPrice.toFixed(2)}`;
 
         const link = document.createElement("a");
-        link.textContent = "View details";
         link.href = `${productPagePath}?id=${jacket.id}`;
+        link.classList.add("related-card-link");
 
-        card.append(image,  heading, price, link);
+        const detailsLabel = document.createElement("span");
+        detailsLabel.classList.add("related-card-details");
+        detailsLabel.textContent = "View details";
+
+        link.append(image, heading, price, detailsLabel);
+        card.appendChild(link)
         grid.appendChild(card);
     }
 
