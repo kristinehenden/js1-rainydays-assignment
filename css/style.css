@@ -1365,6 +1365,12 @@ CART PAGE
 }
 .cart-item-details > button {
     width: auto;
+    min-height: 44px;
+    padding: 0 4px;
+    background-color: transparent;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 .cart-item img {
     width: 200px;

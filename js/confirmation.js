@@ -21,7 +21,8 @@ function loadConfirmation() {
 
         const order = JSON.parse(savedOrder);
 
-        orderNumber.textContent = `Order number: ${order.id}`;
+        const orderReference = `RD-${order.id.slice(0, 8).toUpperCase()}`;
+        orderNumber.textContent = `Order number: ${orderReference}`;
         confirmationSubtotal.textContent = `$${order.subtotal.toFixed(2)}`;
         confirmationShipping.textContent = order.shipping === 0
             ? "Free"

@@ -14,7 +14,10 @@ async function fetchProducts() {
 async function startApp() {
   productStatus.textContent = "Loading jackets...";
   try {
-    const products = await fetchProducts();
+    const fetchedProducts = await fetchProducts();
+    const products = productList.dataset.saleOnly === "true"
+      ? fetchedProducts.filter((product) => product.onSale)
+      : fetchedProducts;
     allProducts = products;
     renderProducts(products);
     genderFilter.disabled = false;
@@ -39,9 +42,15 @@ function renderProducts(products) {
 
     const price = document.createElement("p");
     if (product.onSale) {
-        price.textContent = `Sale: $${product.discountedPrice.toFixed(2)} - Original: $${product.price.toFixed(2)}`;
+      const salePrice = document.createElement("strong");
+      salePrice.textContent = `Sale: $${product.discountedPrice.toFixed(2)}`;
+
+      const originalPrice = document.createElement("s");
+      originalPrice.textContent = `$${product.price.toFixed(2)}`;
+
+      price.append(salePrice, " - Original: ", originalPrice);
     } else {
-        price.textContent = `$${product.price.toFixed(2)}`;
+      price.textContent = `$${product.price.toFixed(2)}`;
     }
 
     const link = document.createElement("a");
