@@ -31,6 +31,16 @@ function loadConfirmation() {
 
         for (const item of order.items) {
             const row = document.createElement("div");
+            row.className = "confirmation-product-row";
+            const productText = document.createElement("div");
+
+            if (item.product.image?.url) {
+                const image = document.createElement("img");
+                image.src = item.product.image.url;
+                image.alt = item.product.image.alt || item.product.title;
+                image.className = "confirmation-product-image";
+                row.appendChild(image);
+            }
 
             const heading = document.createElement("h3");
             heading.textContent = item.product.title;
@@ -38,8 +48,6 @@ function loadConfirmation() {
             const details = document.createElement("p");
             details.textContent = `Size: ${item.size} - Quantity: ${item.quantity}`;
  
-            row.appendChild(heading);
-            row.appendChild(details);
             const unitPrice = item.product.onSale
                 ? item.product.discountedPrice
                 : item.product.price;
@@ -47,8 +55,9 @@ function loadConfirmation() {
 
             const price = document.createElement("p");
             price.textContent = `Unit price $${unitPrice.toFixed(2)} - Item total: $${lineTotal.toFixed(2)}`;
-            row.appendChild(price);
 
+            productText.append(heading, details, price);
+            row.appendChild(productText);
             confirmationItems.appendChild(row);
         }
       } catch (error) {

@@ -1906,7 +1906,7 @@ CONFIRMATION PAGE
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
-    align-items: stretch;
+    align-items: start;
     max-width: 920px;
     margin: 90px auto 0;
     text-align: left;
@@ -1915,7 +1915,6 @@ CONFIRMATION PAGE
 .confirmation-next {
     background-color: var(--white-color);
     padding: 42px;
-    height: 100%;
 }
 .confirmation-summary h2,
 .confirmation-next h2 {
@@ -1954,6 +1953,20 @@ CONFIRMATION PAGE
     border-radius: 8px;
     background-color: var(--secondary-color);
 }
+
+.confirmation-product-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.confirmation-product-image {
+    flex-shrink: 0;
+    width: 64px;
+    height: 80px;
+    object-fit: contain;
+}
+
 .confirmation-line,
 .confirmation-total {
     display: flex;
