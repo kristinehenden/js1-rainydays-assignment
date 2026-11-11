@@ -3,6 +3,11 @@ const productStatus = document.querySelector("#product-status");
 const productList = document.querySelector("#product-list");
 const genderFilter = document.querySelector("#gender-filter");
 let allProducts = [];
+
+const searchParams = new URLSearchParams(window.location.search);
+const searchTerm = (searchParams.get("search") || "").trim().toLowerCase();
+
+document.querySelector("#search").value = searchParams.get("search") || "";
 async function fetchProducts() {
   const response = await fetch(API_URL);
   if (!response.ok) {
@@ -19,9 +24,14 @@ async function startApp() {
       ? fetchedProducts.filter((product) => product.onSale)
       : fetchedProducts;
     allProducts = products;
-    renderProducts(products);
+    const matchingProducts = allProducts.filter((product) =>
+      product.title.toLowerCase().includes(searchTerm)
+    );
+
+    renderProducts(matchingProducts);
     genderFilter.disabled = false;
-    productStatus.textContent = `${products.length} jackets loaded`;
+    productStatus.textContent = `${matchingProducts.length} jackets found`;
+
   } catch (error) {
     productStatus.textContent = "Could not load jackets. Please try again.";
   }
@@ -104,7 +114,9 @@ function renderProducts(products) {
     const selectedGender = genderFilter.value;
     
     const filteredProducts = allProducts.filter((product) => {
-      return selectedGender === "" || product.gender === selectedGender;
+    const matchesGender = selectedGender === "" || product.gender === selectedGender;
+    const matchesSearch = product.title.toLowerCase().includes(searchTerm);
+    return matchesGender && matchesSearch;
     });
 
     renderProducts(filteredProducts);
