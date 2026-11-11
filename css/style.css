@@ -412,6 +412,19 @@ INDEX PAGE
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 24px;
+    padding-block: clamp(40px, 5vw, 64px);
+}
+
+.shop-jackets #products-heading {
+    margin-bottom: 12px;
+}
+
+.shop-jackets #product-status {
+    margin-top: 8px;
+}
+.shop-jackets #product-list {
+    row-gap: 36px;
+    margin-top: 32px;
 }
 
 #product-list {
